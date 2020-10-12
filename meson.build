@@ -1,7 +1,38 @@
 project('All GStreamer modules', 'c',
   version : '1.19.0.1',
   meson_version : '>= 0.54.0',
-  default_options : ['buildtype=debugoptimized'])
+  default_options : [
+    'buildtype=debugoptimized',
+    'rtsp_server=disabled',
+    'vaapi=disabled',
+    'libnice=disabled',
+    'gtk_doc=disabled',
+    'devtools=disabled',
+    'python=disabled',
+    'ges=disabled',
+    'ugly=enabled',
+    'vaapi=enabled',
+    'gstreamer:check=disabled',
+    'gstreamer:tests=disabled',
+    'gst-plugins-base:tests=disabled',
+    'gst-plugins-base:gl-graphene=disabled',
+    'gst-plugins-base:opus=disabled',
+    'gst-plugins-base:pango=enabled',
+    'gst-plugins-good:cairo=disabled',
+    'gst-plugins-good:pulse=disabled',
+    'gst-plugins-good:tests=disabled',
+    'gst-plugins-bad:iqa=disabled',
+    'gst-plugins-bad:openh264=disabled',
+    'gst-plugins-bad:opus=disabled',
+    'gst-plugins-bad:vulkan=disabled',
+    'gst-plugins-bad:wayland=disabled',
+    'gst-plugins-bad:srtp=disabled',
+    'gst-plugins-good:rtp=disabled',
+    'gst-plugins-good:rtpmanager=disabled',
+    'gst-plugins-bad:tests=disabled',
+    'gst-plugins-ugly:tests=disabled',
+    'custom_subprojects=gaeguli'
+  ])
 
 gst_version = '>= @0@'.format(meson.project_version())
 gst_branch = 'master'
